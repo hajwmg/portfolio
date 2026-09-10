@@ -564,6 +564,34 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   border-radius: var(--radius);
   overflow: hidden;
 }
+
+/* ====================================================
+   WORK SCOPE
+   ==================================================== */
+.scope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.scope-card {
+  min-height: 220px;
+  padding: 2rem;
+  background: var(--bg);
+  transition: background var(--transition), transform var(--transition);
+}
+.scope-card:hover { background: var(--surface); transform: translateY(-2px); }
+.scope-card > span {
+  display: block;
+  margin-bottom: 2.2rem;
+  font-family: var(--font-en);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+}
+.scope-card h3 { margin-bottom: 0.8rem; color: var(--white); font-size: 1.05rem; }
+.scope-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.8; }
 .hl-item {
   background: var(--surface);
   padding: 2rem 1.5rem;
@@ -702,6 +730,28 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+}
+.proj-card--visual { padding-top: 1.1rem; }
+.proj-card--visual img {
+  width: 100%;
+  height: 210px;
+  margin-bottom: 1.4rem;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  filter: saturate(0.88);
+  transition: filter var(--transition), transform var(--transition);
+}
+.proj-card--visual:hover img { filter: saturate(1); transform: translateY(-2px); }
+.proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.4rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .proj-card {
@@ -918,6 +968,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .hero-right { display: grid; grid-template-columns: 1fr 1fr; }
   .about-layout { grid-template-columns: 1fr; gap: 3rem; }
   .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .scope-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-layout { grid-template-columns: 1fr; gap: 3rem; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .edu-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -957,6 +1008,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
   .highlights-grid { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
+  .scope-grid { grid-template-columns: 1fr; }
   .tl-block { grid-template-columns: 1fr; gap: 0.5rem; }
   .tl-left { text-align: left; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
